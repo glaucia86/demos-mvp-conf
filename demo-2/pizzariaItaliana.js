@@ -71,7 +71,7 @@ intents.matches("Pedir", [
       var time = moment().add(30, "m");
 
       session.dialogData.time = time.format("HH:mm");
-      session.send("Pronto! Sua pizza %s chegará às %s.", results.response.entity, session.dialogData.time);
+      session.send("Pronto! Sua pizza de **%s** chegará às **%s**.", results.response.entity, session.dialogData.time);
     } else {
       session.send("Sem problemas! Se não gostarem, podem pedir numa próxima vez! :D");
     }
@@ -85,7 +85,7 @@ intents.matches("Cancelar", (session, results) => {
 
 //Endpoint - Verificar:
 intents.matches("Verificar", (session, results) => {
-  session.send("Sua pizza chegará às %s", session.dialogData.time);
+  session.send("Sua pizza chegará às **%s**", session.dialogData.time);
 });
 
 //Endpoint - Default:
